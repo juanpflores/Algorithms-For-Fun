@@ -4,9 +4,16 @@
 import sys
 
 #Miscelaneous fucntions for the example.
-def user_input():
+def user_input(n):
 	''' Allows the user to create a list with his specidifications'''
-	print('How many elements you want to create?')
+	
+	while not n:
+		print('How many elements you want to create?')
+		try:
+			n = int(input())
+		except ValueError:
+			print('The input is not a valid number.')
+	print('The number of values to create is: ' + str(n))
 
 
 
@@ -20,8 +27,8 @@ def insertion_sort():
 
 # Gather our code in a main() function
 def main():
-	n = 0 # Number of values. 
-	
+	n = None # Number of values. 
+	user_input(n)	
   
 
 
