@@ -33,21 +33,22 @@ def initializer(n):
 	return list_of_values		
 
 
-def insertion_sort(values):
+def insertion_sort(value_list):
 	'''Sorting Algorithm'''
-	j = 1
-	for j in range(j, len(values)):
-		key = values[j]
-		i = j - 1
 
-		while i >= 0 and values[i] > key:
-			values[i + 1] = values[i]
-			i -= 1
-		values[i + 1] = key
+	for index in range(1, len(value_list)):
+
+		current_value = value_list[index]
+		position = index - 1
+
+		while position >= 0 and value_list[position] > current_value:
+			value_list[position + 1] = value_list[position]
+			position -= 1
+		value_list[position + 1] = current_value
 		
-		print(values)
+		print(value_list)
 
-	return values
+	return value_list
 
 
 
